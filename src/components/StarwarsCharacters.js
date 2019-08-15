@@ -4,13 +4,11 @@ import '../App.css';
 
 import { connect } from 'react-redux';
 
-import { getData } from '../actions';
-
 function StarwarsCharacters(props) {
-    console.log('character', props.characters)
+
     return (
 
-        <div>
+        <div className="rowz">
             {props.characters.map(chars => (
                 <Character chars={chars} />
             ))}
@@ -27,5 +25,5 @@ const mapStateToProps = state => {
 };
 export default connect(
     mapStateToProps,
-    { getData }
+    {}
 )(StarwarsCharacters);

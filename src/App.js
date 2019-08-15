@@ -1,9 +1,9 @@
-import React from "react";
-import './App.css';
+import React, { useEffect } from "react";
+import { getData } from "./actions";
 import StarwarsCharacters from "./components/StarwarsCharacters"
 
-
-const App = () => {
+import { connect } from "react-redux";
+const App = (props) => {
 
 
   // const [chars, setChar] = useState([]);
@@ -18,16 +18,20 @@ const App = () => {
   //     .catch(err => console.log("YOU DONE BROKE IT!"));
   // };
 
-  // useEffect(() => {
-  //   fetchCharacters();
-  // }, []);
+  useEffect(() => {
+    props.getData();
+    console.log(getData())
+  }, []);
 
   return (
-    <div>
+    <div className="container">
       <h1 className="display-2">Star Wars Character List</h1>
       <StarwarsCharacters />
     </div>
   );
 }
 
-export default App;
+export default connect(
+  null,
+  { getData }
+)(App);
