@@ -9,14 +9,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #000000;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #ffe919;
 }
 
 .App-link {
@@ -30,4 +30,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.sidebyside {
+  display: flex;
+  flex-direction: row;
+}
+
+.allChar {
+  display: flex;
+}
+
+.card {
+display: flex;
+flex-flow: column nowrap;
+justify-content: center;
+background-color: white;
+border: 1px solid black;
+text-align: center; 
 }
