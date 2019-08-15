@@ -1,0 +1,8 @@
+.rowz {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row {
+      margin-right: 33px;
+}
