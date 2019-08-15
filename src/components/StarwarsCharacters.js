@@ -2,20 +2,30 @@ import React from "react";
 import Character from "./Character";
 import '../App.css';
 
-function StarwarsCharacters(props) {
+import { connect } from 'react-redux';
 
+import { getData } from '../actions';
+
+function StarwarsCharacters(props) {
+    console.log('character', props.characters)
     return (
 
-        <div className="row sidebyside">
-            <div className="col-md-4">
-                {props.chars.map(chars => (
-                    <Character chars={chars} />
-                ))}
-            </div>
+        <div>
+            {props.characters.map(chars => (
+                <Character chars={chars} />
+            ))}
         </div>
 
     );
 }
 
 
-export default StarwarsCharacters;
+const mapStateToProps = state => {
+    return {
+        characters: state.chars
+    };
+};
+export default connect(
+    mapStateToProps,
+    { getData }
+)(StarwarsCharacters);
